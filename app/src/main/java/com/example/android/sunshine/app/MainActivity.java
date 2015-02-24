@@ -5,6 +5,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import static com.example.android.sunshine.app.R.id;
+
 
 public class MainActivity extends ActionBarActivity {
 
@@ -14,7 +16,7 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new ForecastFragment())
+                    .add(id.container, new ForecastFragment())
                     .commit();
         }
     }
