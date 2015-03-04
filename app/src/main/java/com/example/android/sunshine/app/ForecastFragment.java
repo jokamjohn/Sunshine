@@ -89,6 +89,7 @@ public class ForecastFragment extends Fragment {
                 R.layout.list_item_forecast,// name of the layout ID
                 R.id.list_view_forecast_textview,//ID if the listview to populate
                 new ArrayList<String>());//passing an empty arraylist
+
         ListView listView = (ListView) rootView.findViewById(R.id.listview_forecast);
         listView.setAdapter(mForecastAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
