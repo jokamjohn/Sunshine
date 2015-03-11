@@ -6,7 +6,7 @@ import android.provider.BaseColumns;
  * Created by DELL on 3/11/2015.
  */
 public class WeatherContract {
-    public static final class weatherEntry implements BaseColumns {
+    public static final class WeatherEntry implements BaseColumns {
         public static final String TABLE_NAME = "weather";
         public static final String COLUMN_LOC_KEY ="location_id";
         public static final String COLUMN_DATETEXT = "date";
