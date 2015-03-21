@@ -18,6 +18,9 @@ public class WeatherProvider extends ContentProvider {
     private static final int LOCATION = 300;
     private static final int LOCATION_ID = 301;
 
+    //adding an instance variable for the WeatherDbHelper
+    private WeatherDbHelper mOpenHelper;
+
     //adding our class variable
     //URI matcher used by the content provider
     private static final UriMatcher sUriMatcher = buildUriMatcher();
@@ -43,7 +46,10 @@ public class WeatherProvider extends ContentProvider {
 
     @Override
     public boolean onCreate() {
-        return false;
+        //instantiating the variable
+        mOpenHelper = new WeatherDbHelper(getContext());
+        //true replaces the SQLite calls with the content provider calls
+        return true;
     }
 
     @Override
