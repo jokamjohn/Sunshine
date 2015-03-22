@@ -17,7 +17,7 @@ public class TestProvider extends AndroidTestCase {
 
     }
 
-    public void testInsertDb(){
+    public void testInsertProvider(){
         //test data to determine whether the database works
         String testLocationSetting = "99705";
         String testCityName = "North Pole";
@@ -47,7 +47,15 @@ public class TestProvider extends AndroidTestCase {
 
         //query the database
 
-        Cursor cursor = db.query(WeatherContract.LocationEntry.TABLE_NAME,columns,null,null,null,null,null);
+        Cursor cursor = db.query(
+                WeatherContract.LocationEntry.TABLE_NAME,//Table to query
+                columns,// leaving columns null just returns all the columns
+                null,//cols for "where" clause
+                null,//values for "where" clause
+                null,//columns to group by
+                null,//columns to filter by row groups
+                null//sort order
+        );
 
         //test if the db is not empty, if not it moves to the first entry
         if (cursor.moveToFirst()) {
