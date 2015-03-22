@@ -222,7 +222,7 @@ public class WeatherProvider extends ContentProvider {
     public Uri insert(Uri uri, ContentValues values) {
         final SQLiteDatabase db = mOpenHelper.getWritableDatabase();
         int match = sUriMatcher.match(uri);
-        Uri returnUri = null;
+        Uri returnUri;
         //we are only matching the base uri
         switch (match){
             case WEATHER:{
@@ -235,6 +235,11 @@ public class WeatherProvider extends ContentProvider {
                 break;
             }
             case LOCATION:{
+                long _id = db.insert(WeatherContract.LocationEntry.TABLE_NAME, null, values);
+                if ( _id > 0 )
+                    returnUri = WeatherContract.LocationEntry.buildLocationUri(_id);
+                else
+                    throw new android.database.SQLException("Failed to insert row into " + uri);
                 break;
             }
                 default:
