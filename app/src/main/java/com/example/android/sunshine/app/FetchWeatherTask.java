@@ -22,7 +22,7 @@ import java.net.URL;
 import java.util.Vector;
 
 /**
- * Created by DELL on 3/22/2015.
+ * Created by John Kagga on 3/22/2015.
  */
 class FetchWeatherTask extends AsyncTask<String, Void, Void> {
 

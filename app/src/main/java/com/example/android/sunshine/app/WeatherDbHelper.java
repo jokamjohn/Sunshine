@@ -31,7 +31,7 @@ public class WeatherDbHelper extends SQLiteOpenHelper {
                 WeatherContract.LocationEntry.COLUMN_CITY_NAME+"REAL NOT NULL"+
                 WeatherContract.LocationEntry.COLUMN_COORD_LAT+"REAL NOT NULL"+
                 WeatherContract.LocationEntry.COLUMN_COORD_LONG+"REAL NOT NULL"+
-                " );";
+                " )";
         //weather table creation
         final String SQL_CREATE_WEATHER_TABLE = "CREATE TABLE" + WeatherContract.WeatherEntry.TABLE_NAME+ "("+
                 WeatherContract.WeatherEntry._ID + "INTEGER PRIMARY KEY AUTOINCREMENT" +
