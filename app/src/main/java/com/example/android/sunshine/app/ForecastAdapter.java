@@ -41,6 +41,7 @@ public class ForecastAdapter extends CursorAdapter {
                 cursor.getDouble(idx_max_temp),
                 cursor.getDouble(idx_min_temp));
 
+        //String formatting
         return Utility.formatDate(cursor.getLong(idx_date)) +
                 " - " + cursor.getString(idx_short_desc) +
                 " - " + highAndLow;
