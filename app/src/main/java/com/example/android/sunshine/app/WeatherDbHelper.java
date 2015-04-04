@@ -51,6 +51,8 @@ public class WeatherDbHelper extends SQLiteOpenHelper {
                 "UNIQUE("+ WeatherContract.WeatherEntry.COLUMN_DATETEXT+","+ WeatherContract.WeatherEntry.COLUMN_LOC_KEY+")ON CONFLICT REPLACE);";
 
         db.execSQL(SQL_CREATE_WEATHER_TABLE);
+        db.execSQL(SQL_CREATE_LOCATION_TABLE);
+
 
 
     }
